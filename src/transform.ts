@@ -1,6 +1,6 @@
 import cheerio from 'cheerio'
 
-export default function transform(response) {
+export default function transform(response: any) {
   const $ = cheerio.load(response.body)
     // console.log("Transform script running on '"+response.req.originalUrl+"'") // for testing
 
