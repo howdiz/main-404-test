@@ -15,6 +15,11 @@ export default new Router()
     cache(CACHE_ASSETS)
     return proxy('origin')
   })
+  .match('/main.js', ({ serveStatic, cache }) => {
+    cache(CACHE_ASSETS)
+    return serveStatic('dist/browser.js')
+  })
+
   // fallback route for all other requests:
   .fallback(({ proxy }) => {
     proxy('origin')
